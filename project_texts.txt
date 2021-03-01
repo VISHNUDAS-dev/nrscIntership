@@ -1,4 +1,76 @@
 //Please paste the text data for the application development here, try to give commands for better understanding//
-aswathi
-vishnu
-good night!
+Select category
+
+What do you call this category?
+
+Upload your Excel File
+
+Upload
+
+Error occurred
+
+Success
+
+Download
+
+Uploaded successfully
+
+Failed please check the Internet connectivity.
+
+Or Excel table structure
+
+
+
+
+
+
+NRSC Hyderabad 
+
+Indian Space Research Organization
+
+AUTOMATED VIDEO GENERATOR
+
+Easy & Faster
+
+Create a new Video!
+
+Upload Image and Create your Video
+
+Try Now
+
+Create Video from your Excel File
+
+Try Now
+
+Recent Works
+
+Pick from the Database
+
+Agriculture
+Education
+Space Research
+Weather
+
+
+
+
+
+NRSC, ISRO All Rights Reserved.
+
+Select your Category
+
+Upload Image
+
+Uploaded
+
+Provide Description
+
+Continue
+
+Generate Video
+
+Loading
+
+Your File is Ready
+
+Download File
