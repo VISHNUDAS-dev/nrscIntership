@@ -69,3 +69,124 @@
     line-height: 3rem;
     
 }
+
+.sectiontitle{
+    font-family: 'Antic', sans-serif;
+    color: rgb(92, 90, 90);
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+}
+.subh{
+    font-family: 'Quattrocento', serif;
+    font-size: 30px;
+    color: rgb(109, 86, 214);
+    text-align: center;
+}
+.imagemethod{
+    width: 50%;
+    float: left;
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    padding-bottom: 25px;
+    
+    
+}
+.excelmethod{
+    margin-left: 50%;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+.shalf{
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+    transition: .3s;
+    border-radius: 8px;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 20px;
+    
+    
+}
+.shalf:hover{
+    box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.2);
+}
+.uimgicon{
+    width: 200px;
+    height: auto;
+    
+}
+.uexicon{
+    width: 200px;
+    height: auto;
+}
+.methoddescription{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(129, 127, 127);
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 11px;
+    
+    
+}
+
+#upimg{
+    margin-top: 10px;
+    background-color: white;
+    color:rgb(109, 86, 214);
+    border: 2px solid rgb(109, 86, 214);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 25px;
+    transition: .3s;
+    
+    
+}
+#upimg:hover{
+    background-color:rgb(109, 86, 214);
+    color:white;
+    
+}
+#upexcel{
+    margin-top: 10px;
+    background-color: white;
+    color:rgb(109, 86, 214);
+    border: 2px solid rgb(109, 86, 214);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 25px;
+    transition: .3s;
+    
+    
+}
+
+#upexcel:hover{
+    background-color:rgb(109, 86, 214);
+    color:white;
+}
+.footer{
+    margin-top: 80px;
+    background-color:rgb(109, 86, 214);
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: white;
+    font-family: 'Antic', sans-serif;
+    font-size: 11px;
+}
