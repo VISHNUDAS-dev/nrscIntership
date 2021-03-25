@@ -1,5 +1,5 @@
 html,body{
-    min-height: 100%;
+    height: 100%;
 }
 
 *{
@@ -154,12 +154,14 @@ html,body{
     padding-bottom: 5px;
     border-radius: 25px;
     transition: .3s;
+    outline-style: none;
     
     
 }
 #upimg:hover{
     background-color:rgb(109, 86, 214);
     color:white;
+    
     
 }
 #upexcel{
@@ -187,7 +189,7 @@ html,body{
 .modalbg{
     width: 100%;
     height: 100%;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -197,6 +199,7 @@ html,body{
     justify-content: center;
     align-items: center;
     display: none;
+
     
 }
 .modalpopup{
@@ -204,8 +207,16 @@ html,body{
     height: 600px;
     background: white;
     border-radius:4px;
+    position: relative;
 }
-
+.close{
+    position: absolute;
+    right: 14px;
+    font-size: 30px;
+    font-weight: bold;
+    transform:rotate(45deg);
+    cursor: pointer;
+}
 
 
 
