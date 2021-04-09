@@ -27,7 +27,8 @@ exports.checkdb=async(req,res)=>{
             result = rows;
         }
         else{
-            throw err;
+            console.log("category already exists.");
+            //throw err;
         }
         conn.end();
     })
