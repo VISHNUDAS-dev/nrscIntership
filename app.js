@@ -21,8 +21,11 @@ app.use('/assets', express.static('assets'));
 
 //middlewares
 app.use('/',require('./server/routes/homeroute'));
+app.use('uploadimage',require('./server/routes/homeroute'));
+
 app.use('/a',require('./server/routes/homeroute'));
 app.use('/b',require('./server/routes/homeroute'));
+app.use('/mv',require('./server/routes/homeroute'));
 
     
 
