@@ -1,7 +1,23 @@
 var videoshow=require('videoshow');
 const { patch } = require('../routes/homeroute');
+const fs=require('fs');
 
-exports.imtovi=(req,res)=>{
+exports. imtovi=(req,res)=>{
+    
+    let img=[];
+    let directory_name='./uploads/images/';
+    let ddrk='./uploads/videos/';
+    let filenames = fs.readdirSync(directory_name);
+    console.log("\nFilenames in directory:");
+    filenames.forEach((file) => {
+        console.log("File:", file);
+        
+        img.push('./uploads/images/'+file);
+        console.log(img);
+    });
+
+
+
     var images=[
         {
             path:'./assets/img/img1.jpg'
@@ -31,9 +47,9 @@ exports.imtovi=(req,res)=>{
     };
 
     //call video
-    videoshow(images,videooption)
+    videoshow(img,videooption)
     .audio("test1.mp3")
-    .save("output.mp4")
+    .save(ddrk+"output.mp4")
     .on('start',function(command){
         console.log("covertion started"+command)
 
@@ -43,7 +59,11 @@ exports.imtovi=(req,res)=>{
 
     })
     .on('end',function(output){
-        console.log("covertion completed"+output)
+        console.log("covertion completed"+output);
+        let savedir=ddrk+"output.mp4";
+        console.log(savedir);
+        res.download(savedir);
 
     })
+    
 }
