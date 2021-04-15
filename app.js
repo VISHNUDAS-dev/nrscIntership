@@ -4,6 +4,7 @@ const path= require('path');
 const gtts=require('gtts');
 const mysql=require('mysql');
 const alert=require('alert');
+const multer=require('multer');
 
 
 const app=express();
@@ -22,10 +23,11 @@ app.use('/assets', express.static('assets'));
 //middlewares
 app.use('/',require('./server/routes/homeroute'));
 app.use('uploadimage',require('./server/routes/homeroute'));
-
 app.use('/a',require('./server/routes/homeroute'));
 app.use('/b',require('./server/routes/homeroute'));
 app.use('/mv',require('./server/routes/homeroute'));
+app.use('/uploadingimage',require('./server/routes/homeroute'));
+
 
     
 
