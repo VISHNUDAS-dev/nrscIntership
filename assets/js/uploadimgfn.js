@@ -1,3 +1,4 @@
+
 var send=function(){
     var myfile=document.getElementById("myfile").files;
     var formdata=new FormData();
@@ -21,5 +22,6 @@ var send=function(){
       });
 
 };
+
 
 
