@@ -1,6 +1,20 @@
 const multer=require('multer');
+const fs=require('fs');
+
 
 exports.imageuploading=(req,res)=>{
+
+
+
+  
+    const cat=req.body.filename;
+    console.log("done"+cat);
+    //const fname=Storage.Session.get('FNAME');
+    //const dydir='./uploads/images/'+cat+'/'+fname+'/';
+    //console.log(cat);
+    //if(!fs.existsSync(dydir)){
+      //fs.mkdirSync(dydir);
+    //}
 
 
     var storage = multer.diskStorage({

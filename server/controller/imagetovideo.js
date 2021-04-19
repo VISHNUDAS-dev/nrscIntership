@@ -5,6 +5,7 @@ const fs=require('fs');
 exports. imtovi=(req,res)=>{
     
     let img=[];
+    let time=4;
     let directory_name='./uploads/images/';
     let ddrk='./uploads/videos/';
     let filenames = fs.readdirSync(directory_name);
@@ -18,21 +19,10 @@ exports. imtovi=(req,res)=>{
 
 
 
-    var images=[
-        {
-            path:'./assets/img/img1.jpg'
-        },
-        {
-            path:'./assets/img/img2.jpg'
-        },
-        {
-            path:'./assets/img/img3.jpg'
-        }
-
-    ]
+    
     var videooption={
         fps: 25,
-        loop: 5, // seconds
+        loop: time, // seconds
         transition: true,
         transitionDuration: 1,
         captionDelay: 1000,

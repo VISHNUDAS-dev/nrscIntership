@@ -83,18 +83,19 @@
                 <h1>Caution... section below this is to be removed</h1>
 
             </div>
-            <div class="tts">
-                    <form method="POST" action="/a">
-                            <textarea name="text" cols="30" rows="10"></textarea>
-                            <input type="submit" value="convert to mp3"/>
-                    </form>
-
-            </div>
-             <!--this section check the authenticity of the file name-->
+            
+             <!--this section check the authenticity of the file name and selection of category-->
             <h1>this section to be persisted</h1>
             <form method="POST" action="/u">
-                <input type="text" id="filename" name="filename">
-                <input type="submit" value="next"/>
+                <h3>select category</h3>
+                <select name="category" id="video_cat">
+                    <option value="agriculture">Agriculture</option>
+                    <option value="Education">Education</option>
+                    <option value="space">Space Research</option>
+                </select><br>
+                <h3>select filename</h3>
+                <input type="text" id="filename" name="filename"/>
+                <input type="submit" onclick="handle_next()" id="next" value="next"/>
             </form>
 
         </div>
