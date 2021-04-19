@@ -2,7 +2,7 @@ const gtts=require('gtts');
 
 exports.textTospeech=(req,res)=>{
     const text=req.body.text;
-
+    console.log(text);
     var speech = new gtts(text, 'en');
     speech.save('test1.mp3', function (err, result) {
     if(err) { throw new Error(err) }
