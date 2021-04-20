@@ -23,5 +23,29 @@ var send=function(){
 
 };
 
+//sending text and file name tts $()
+$(document).ready(function(){
+  $('#ttsbtn').click(function(){
+
+    const file_name=$('#file_name');
+    const input_data=$('#tarea');
+    $.ajax({
+      url         :'/texttspeech',
+      method      : 'POST',
+      contentType :'application/json',
+      data        :JSON.stringify({filename:file_name.val(),inputdata:input_data.val()}),
+      success     :function(response){
+        //do something
+      }
+
+
+    });
+
+  });
+
+});
+
+
+
 
 

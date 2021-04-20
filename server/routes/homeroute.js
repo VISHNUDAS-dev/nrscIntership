@@ -10,7 +10,7 @@ const cts=require('../controller/clientToserverupld');
 
 
 router.get('/',renderingHomepage.renderingHomepage);
-router.post('/a',textTspeech.textTospeech);
+router.post('/texttspeech',textTspeech.textTospeech);
 router.post('/b',insertdb.checkdb);
 router.post('/u',upimagepage.renderingui);
 router.post('/mv',utm.imtovi);
