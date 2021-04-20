@@ -1,4 +1,5 @@
 const multer=require('multer');
+const bodyParser=require('body-parser');
 const fs=require('fs');
 
 
@@ -7,8 +8,7 @@ exports.imageuploading=(req,res)=>{
 
 
   
-    const cat=req.body.filename;
-    console.log("done"+cat);
+    
     //const fname=Storage.Session.get('FNAME');
     //const dydir='./uploads/images/'+cat+'/'+fname+'/';
     //console.log(cat);
@@ -19,14 +19,20 @@ exports.imageuploading=(req,res)=>{
 
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
-          cb(null, './uploads/images/')
+          const fname=req.body.file_folder;
+          console.log(fname);
+          const dydir='./uploads/images/'+fname+'/';
+          console.log(dydir);
+          if(!fs.existsSync(dydir)){
+            fs.mkdirSync(dydir);}
+          cb(null, dydir)
         },
         filename: function (req, file, cb) {
           cb(null,file.originalname)
         }
       })
        
-      var upload = multer({ storage: storage }).array('myfile',5);
+      var upload = multer({ storage: storage }).array('myfile',25);
       
       upload(req, res, function (err) {
         if (err instanceof multer.MulterError) {

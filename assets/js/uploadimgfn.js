@@ -1,7 +1,9 @@
 
 var send=function(){
+    var f_folder=document.getElementById("file_name").value;
     var myfile=document.getElementById("myfile").files;
     var formdata=new FormData();
+    formdata.append("file_folder",f_folder);
     for(var i=0;i<myfile.length;i++)
     {
         formdata.append("myfile",myfile[i]);
