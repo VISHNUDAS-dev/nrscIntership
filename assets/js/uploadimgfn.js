@@ -51,17 +51,19 @@ $(document).ready(function(){
 });
 
 //sending text and file name imagetovideo $()
-$('#imgtovid').click(function(){
+$('#make').click(function(){
 
   const file_name=$('#file_name');
   const vcat=$('#video_cat');
   $.ajax({
-    url         :'/createvideo',
+    url         :'/mv',
     method      : 'POST',
     contentType :'application/json',
-    data        :JSON.stringify({filename:file_name.val(),inputdata:vcat.val()}),
+    data        :JSON.stringify({filename:file_name.val(),type:vcat.val()}),
     success     :function(response){
       //do something
+      //response.download(output);
+      
     }
 
 

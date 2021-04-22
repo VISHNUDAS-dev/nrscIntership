@@ -9,8 +9,8 @@ exports.imtovi=(req,res)=>{
     var appDir = path.dirname(require.main.filename);
 
     //getting text data from ajax request createvideo
-    const parent_folder=req.body.inputdata;
-    const child_folder=req.body.file_name;
+    const parent_folder=req.body.type;
+    const child_folder=req.body.filename;
     console.log(parent_folder);
     console.log(child_folder);
     //data aquired------------
@@ -70,10 +70,10 @@ exports.imtovi=(req,res)=>{
     })
     .on('end',function(output){
         console.log("covertion completed"+output);
-        let savedir=ddrk+videoname;
-        console.log(savedir);
-        res.download(savedir);
-
+        //let savedir=ddrk+"nrsc.mp4";
+        //console.log(savedir);
+        res.download(output);
+        
     })
     
 }
