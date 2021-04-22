@@ -20,8 +20,14 @@ exports.imageuploading=(req,res)=>{
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
           const fname=req.body.file_folder;
+          const vcat=req.body.vcategory;
           console.log(fname);
-          const dydir='./uploads/images/'+fname+'/';
+          console.log(vcat);
+          const badir='./uploads/images/'+vcat+'/';
+          if(!fs.existsSync(badir)){
+            fs.mkdirSync(badir);}
+            
+          const dydir=badir+'/'+fname+'/';
           console.log(dydir);
           if(!fs.existsSync(dydir)){
             fs.mkdirSync(dydir);}

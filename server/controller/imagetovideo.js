@@ -1,19 +1,39 @@
 var videoshow=require('videoshow');
-const { patch } = require('../routes/homeroute');
+//const { patch } = require('../routes/homeroute');
 const fs=require('fs');
+const bodyParser=require('body-parser');
+const path= require('path');
 
-exports. imtovi=(req,res)=>{
+exports.imtovi=(req,res)=>{
+
+    var appDir = path.dirname(require.main.filename);
+
+    //getting text data from ajax request createvideo
+    const parent_folder=req.body.inputdata;
+    const child_folder=req.body.file_name;
+    console.log(parent_folder);
+    console.log(child_folder);
+    //data aquired------------
+
+
+    //setting file names for audio and video
+    const videoname=child_folder+'.mp4';
+    const bgm=child_folder+'.mp3';
+    //values set-----------------
+
+
+    const audiofilename=appDir+'/uploads/audio/'+bgm;
     
     let img=[];
     let time=4;
-    let directory_name='./uploads/images/';
+    let directory_name='./uploads/images/'+parent_folder+'/'+child_folder+'/';
     let ddrk='./uploads/videos/';
     let filenames = fs.readdirSync(directory_name);
     console.log("\nFilenames in directory:");
     filenames.forEach((file) => {
         console.log("File:", file);
         
-        img.push('./uploads/images/'+file);
+        img.push('./uploads/images/'+parent_folder+'/'+child_folder+'/'+file);
         console.log(img);
     });
 
@@ -38,8 +58,8 @@ exports. imtovi=(req,res)=>{
 
     //call video
     videoshow(img,videooption)
-    .audio("test1.mp3")
-    .save(ddrk+"output.mp4")
+    .audio(audiofilename)
+    .save(ddrk+videoname)
     .on('start',function(command){
         console.log("covertion started"+command)
 
@@ -50,7 +70,7 @@ exports. imtovi=(req,res)=>{
     })
     .on('end',function(output){
         console.log("covertion completed"+output);
-        let savedir=ddrk+"output.mp4";
+        let savedir=ddrk+videoname;
         console.log(savedir);
         res.download(savedir);
 

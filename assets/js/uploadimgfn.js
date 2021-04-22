@@ -1,9 +1,12 @@
 
 var send=function(){
     var f_folder=document.getElementById("file_name").value;
+    var category=document.getElementById("video_cat").value;
     var myfile=document.getElementById("myfile").files;
     var formdata=new FormData();
     formdata.append("file_folder",f_folder);
+    formdata.append("vcategory",category);
+
     for(var i=0;i<myfile.length;i++)
     {
         formdata.append("myfile",myfile[i]);
@@ -46,6 +49,26 @@ $(document).ready(function(){
   });
 
 });
+
+//sending text and file name imagetovideo $()
+$('#imgtovid').click(function(){
+
+  const file_name=$('#file_name');
+  const vcat=$('#video_cat');
+  $.ajax({
+    url         :'/createvideo',
+    method      : 'POST',
+    contentType :'application/json',
+    data        :JSON.stringify({filename:file_name.val(),inputdata:vcat.val()}),
+    success     :function(response){
+      //do something
+    }
+
+
+  });
+
+});
+
 
 
 

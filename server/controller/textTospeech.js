@@ -6,7 +6,7 @@ exports.textTospeech=(req,res)=>{
     var appDir = path.dirname(require.main.filename);
     const flname=req.body.filename;
     const text=req.body.inputdata;
-    const finalfilename=appDir+'/uploads/audio'+flname+'.mp3';
+    const finalfilename=appDir+'/uploads/audio/'+flname+'.mp3';
     console.log(finalfilename);
     var speech = new gtts(text, 'en');
     speech.save(finalfilename, function (err, result) {
