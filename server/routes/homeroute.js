@@ -13,6 +13,6 @@ router.get('/',renderingHomepage.renderingHomepage);
 router.post('/texttspeech',textTspeech.textTospeech);
 router.post('/b',insertdb.checkdb);
 router.post('/u',upimagepage.renderingui);
-router.post('/mv',utm.imtovi);
+router.post('/createvideo',utm.imtovi);
 router.post('/uploadingimage',cts.imageuploading);
 module.exports=router;
