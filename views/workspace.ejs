@@ -2,6 +2,7 @@
     <head>
         <title>Avg_nrsc</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="../assets/css/workspace.css" type="text/css">
        
         
     </head>
@@ -9,8 +10,9 @@
         
         <div class="regsection">
             <!--this section check the authenticity of the file name and selection of category-->
-            <h1>please select a category and filename</h1>
-          
+            <h1>--App Work Space--</h1>
+
+                
                 <h3>select category</h3>
                 <select name="category" id="video_cat">
                     <option value="agriculture">Agriculture</option>
@@ -57,10 +59,29 @@
         <button id="make">CREATE</button>
 
 
+
+
+    <!--adding modal popup-->
+    <h2>this is a model popup section</h2>
+    <div class="modalbg">
+        <div class="modalpopup">
+            <div class="close">+</div>
+            <div class="category">
+                <form method="POST" action="/b">
+                    <input type="text" id="cat" name="cat">
+                    <input type="submit" value="Insert"/>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
         
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="../assets/js/uploadimgfn.js"></script>
-        <script src="../assets/js/scriptsp.js"></script>
-
+        <script src="../assets/js/workspacefn.js"></script>
+    
     </body>
 </html>
