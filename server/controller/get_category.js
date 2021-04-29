@@ -1,10 +1,8 @@
-//user register the category and file name
-//first -- register the category to category table
 const mysql=require('mysql');
 const config=require('../database/dbconfig/config');
 
 
-exports.checkdb=async(req,res)=>{
+exports.getcat=async(req,res)=>{
     
 
     var conn = mysql.createConnection({
@@ -18,14 +16,13 @@ exports.checkdb=async(req,res)=>{
       if (err) throw err;
       console.log('Database is connected successfully !');
     });
-    const categoryname=req.body.cat;
-    console.log("g"+categoryname);
-    var query = "INSERT INTO category(section)VALUES('"+categoryname+"')";
+    var query = "SELECT DISTINCT section FROM category";
     conn.query(query, function(err, rows, fields){
         if(!err){
             console.log(rows);
-            result = rows;
-            res.render('workspace');
+            res.send(rows);
+           
+            
         }
         else{
             console.log("category already exists.");
@@ -38,23 +35,3 @@ exports.checkdb=async(req,res)=>{
    
 
 }
-
-
-
-
-
-
-
-
-
-    //connecting to database
-    //await connectdb();
-    
-    
-    
-
-
-    //aler('succeed');
-
-
-

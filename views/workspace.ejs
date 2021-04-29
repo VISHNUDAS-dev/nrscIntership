@@ -14,11 +14,11 @@
 
                 
                 <h3>select category</h3>
-                <select name="category" id="video_cat">
-                    <option value="agriculture">Agriculture</option>
-                    <option value="Education">Education</option>
-                    <option value="space">Space Research</option>
-                </select><br>
+                <select name="category" id="video_cat"></select><br>
+
+                <h3>add category</h3>
+                <button id="ac">Add Category</button>
+
                 <h3>select filename</h3>
                 <input type="text" id="file_name" name="filename"/>
                 <button id="next">next</button>
@@ -56,17 +56,20 @@
 
 
         <!--this button click creates the video-->
-        <button id="make">CREATE</button>
+        <button id="makevideo">CREATE your video</button>
 
 
 
 
     <!--adding modal popup-->
-    <h2>this is a model popup section</h2>
+    
     <div class="modalbg">
+        
         <div class="modalpopup">
+            
             <div class="close">+</div>
             <div class="category">
+                <h2>this is a model popup section</h2>
                 <form method="POST" action="/b">
                     <input type="text" id="cat" name="cat">
                     <input type="submit" value="Insert"/>
@@ -82,6 +85,7 @@
         
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="../assets/js/workspacefn.js"></script>
+        <script src="../assets/js/workspaceModalPOP.js"></script>
     
     </body>
 </html>
