@@ -72,7 +72,7 @@ exports.imtovi=(req,res)=>{
         console.log("covertion completed"+output);
         //let savedir=ddrk+"nrsc.mp4";
         //console.log(savedir);
-        res.download(output);
+        //res.download(output);
         
     })
     
