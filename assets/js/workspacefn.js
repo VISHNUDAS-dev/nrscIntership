@@ -90,6 +90,63 @@ $('#makevideo').click(function(){
 });
 
 
+//sending filename into filestore table
+$('#next').click(function(){
+
+  const file_name=$('#file_name');
+  $.ajax({
+    url         :'/insertfilename',
+    method      : 'POST',
+    contentType :'application/json',
+    data        :JSON.stringify({filename:file_name.val()}),
+    success     :function(response){
+      //do something
+      
+      
+    }
+
+
+  });
+
+});
+//sending filename to check the availability
+$('#file_name').keyup(function(){
+
+  //var file_name = $(this).val().trim();
+  const file_name=$('#file_name');
+  if(file_name != ''){
+    $.ajax({
+      url         :'/checkfilename',
+      method      : 'POST',
+      contentType :'application/json',
+      data        :JSON.stringify({filename:file_name.val()}),
+      success     :function(response){
+        if(response==0){
+          $("#next").attr("disabled", true);
+        }
+        else if (response==1){
+          $("#next").attr("disabled", false);
+        }
+        else{
+          
+        }
+        
+        //do something
+        
+        
+        
+      }
+  
+  
+    });
+
+  }
+  
+
+});
+
+
+
 
 
 
