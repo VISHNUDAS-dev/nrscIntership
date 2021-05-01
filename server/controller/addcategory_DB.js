@@ -35,8 +35,6 @@ exports.checkdb=async(req,res)=>{
     })
 
 
-   
-
 }
 
 
@@ -47,14 +45,6 @@ exports.checkdb=async(req,res)=>{
 
 
 
-    //connecting to database
-    //await connectdb();
     
-    
-    
-
-
-    //aler('succeed');
-
 
 
