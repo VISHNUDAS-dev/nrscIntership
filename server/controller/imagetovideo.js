@@ -77,3 +77,12 @@ exports.imtovi=(req,res)=>{
     })
     
 }
+
+exports.downloading=(req,res)=>{
+    
+    const name=req.body.filename;
+    //console.log(child_folder);
+    res.download('./uploads/videos/'+name+'.mp4');
+
+
+}

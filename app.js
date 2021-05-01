@@ -32,6 +32,7 @@ app.use('/uploadingimage',require('./server/routes/homeroute'));
 app.use('/getcategory',require('./server/routes/homeroute'));
 app.use('/insertfilename',require('./server/routes/homeroute'));
 app.use('/checkfilename',require('./server/routes/homeroute'));
+app.use('/download',require('./server/routes/homeroute'));
 
 
     

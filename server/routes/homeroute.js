@@ -24,4 +24,5 @@ router.post('/uploadingimage',cts.imageuploading);
 router.get('/getcategory',gcat.getcat);
 router.post('/insertfilename',fsin.insertfilestore);
 router.post('/checkfilename',fncheck.checkavailability);
+router.post('/download',utm.downloading);
 module.exports=router;

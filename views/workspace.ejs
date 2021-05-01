@@ -12,18 +12,18 @@
             <!--this section check the authenticity of the file name and selection of category-->
             <h1>--App Work Space--</h1>
 
-                
+            <form id="Form1" action="/download" method="post"></form>
                 <h3>select category</h3>
-                <select name="category" id="video_cat"></select><br>
+                <select name="category" id="video_cat" form="Form1"></select><br>
 
                 <h3>add category</h3>
                 <button id="ac">Add Category</button>
 
                 <h3>select filename</h3>
-                <input type="text" id="file_name" name="filename"/>
+                <input type="text" id="file_name" name="filename" form="Form1"/>
                 <h6>validation of filename</h6>
                 <button id="next">next</button>
-           
+            
 
 
 
@@ -57,7 +57,8 @@
 
 
         <!--this button click creates the video-->
-        <button id="makevideo">CREATE your video</button>
+        <button id="makevideo">CREATE your video</button><br>
+        <input type="submit" name="button1" value="Download" form="Form1" />
 
 
 
