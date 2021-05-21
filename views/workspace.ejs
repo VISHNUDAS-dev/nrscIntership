@@ -1,64 +1,74 @@
 <html>
     <head>
         <title>Avg_nrsc</title>
+        <link rel="stylesheet" href="../assets/css/all.css" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="../assets/css/workspace.css" type="text/css">
-       
-        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Antic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">       
     </head>
     <body>
-        
-        <div class="regsection">
-            <!--this section check the authenticity of the file name and selection of category-->
-            <h1>--App Work Space--</h1>
-
-            <form id="Form1" action="/download" method="post"></form>
-                <h3>select category</h3>
-                <select name="category" id="video_cat" form="Form1"></select><br>
-
-                <h3>add category</h3>
-                <button id="ac">Add Category</button>
-
-                <h3>select filename</h3>
-                <input type="text" id="file_name" name="filename" form="Form1"/>
-                <h6>validation of filename</h6>
-                <button id="next">next</button>
-            
-
-
-
-        </div> 
-
-
-
-
-        <div class="actionsection">
-
-
-            <!--this section contain gui for uploading images-->
-            <h2>upload images from local system</h2>
-            <input type="file" name="myfile" id="myfile" multiple accept="image/jpg,png,jpeg">
-            <button  onclick="send()">Upload</button>
-
-
-
-             <!--this section contain gui for text to speech-->
-            <h2>create your background music</h2>
-            <div class="tts">
-                
-                        <textarea name="text" id="tarea" cols="30" rows="10"></textarea>
-                        <button  id="ttsbtn">convert to mp3</button>
-                
-
+        <div class="appadv">
+            <div class="image_wrapper">
+                <img src="../assets/img/logo.png" alt="applogo_here">
             </div>
-
+            <div class="ah">iVideo Workbench</div>
+            <i id="ac" class="fas fa-plus-circle"></i>
+            <div class="regsection">
+                <!--this section check the authenticity of the file name and selection of category-->
+                    <form id="Form1" action="/download" method="post"></form>
+                    <div class="description">
+                        <i class="fas fa-list-ul"></i>
+                        <h4>Select category</h4>
+                    </div><br>
+                    <select name="category" id="video_cat" form="Form1"></select><br>
+                    <div class="description">
+                        <i class="fas fa-file-signature"></i>
+                        <h4>Your filename</h4>
+                    </div><br>
+                    <input type="text" id="file_name" name="filename" form="Form1" autocomplete="off"/><br>
+                    <button id="next" disabled="disabled">Next</button>
+            </div> 
+            
             
         </div>
-
-
-        <!--this button click creates the video-->
-        <button id="makevideo">CREATE your video</button><br>
-        <input type="submit" name="button1" value="Download" form="Form1" />
+        <div class="actionsection">
+            <div class="image_wrapping">
+                <img src="../assets/img/logo.png" alt="applogo_here">
+            </div>
+            <div class="sectiontitle">Welcome To Your Workspace</div>
+            <!--this section contain gui for uploading images-->
+            <div class="imgupload">
+                add icon here................
+                <h3>upload images from local system</h3>
+                <input type="file" name="myfile" id="myfile" multiple accept="image/jpg,png,jpeg">
+                <button  onclick="send()">Upload</button>
+            </div>
+             <!--this section contain gui for text to speech-->
+            <div class="tts">
+                add icon here.....................
+                <h3>Compose your background track</h3>
+                <textarea name="text" id="tarea" cols="30" rows="10"></textarea>
+                <button  id="ttsbtn" >Compose</button>
+            </div>
+            <div class="rendervideo">
+                icon Here...
+                <h4>Video Options</h4>
+                icon here..
+                <p>select loop time</p>
+                <input type="number" id="loop" name="time">
+                <button id="makevideo">Render Video</button><br>
+            </div>
+            <!--this button click creates the video-->
+            <div class="download">
+                <input type="submit" name="button1" value="Download" form="Form1" />
+            </div>
+            
+        </div>
+        
 
 
 
@@ -70,16 +80,17 @@
         <div class="modalpopup">
             
             <div class="close">+</div>
+            <div class="icon_wrapper">
+                <img src="../assets/img/logo.png" alt=appicon>
+            </div><br>
             <div class="category">
-                <h2>this is a model popup section</h2>
-                <form method="POST" action="/b">
-                    <input type="text" id="cat" name="cat">
-                    <input type="submit" value="Insert"/>
-                </form>
+                <p>Welcome!</p>
+                <input type="text" id="cat" name="cat" placeholder="+  Category name" autocomplete="off"><br>
+                <button id=newcat>Insert</button>
             </div>
             
         </div>
-    </div>
+     </div>
 
 
 

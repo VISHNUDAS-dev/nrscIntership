@@ -19,7 +19,7 @@ exports.getcat=async(req,res)=>{
     var query = "SELECT DISTINCT section FROM category";
     conn.query(query, function(err, rows, fields){
         if(!err){
-            console.log(rows);
+            //console.log(rows);
             res.send(rows);
            
             

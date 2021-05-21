@@ -18,7 +18,7 @@ router.get('/',renderingHomepage.renderingHomepage);
 router.get('/createvideo',upimagepage.renderingui);
 //API RENDER ROUTES
 router.post('/texttspeech',textTspeech.textTospeech);
-router.post('/b',insertdb.checkdb);
+router.post('/insertcategory',insertdb.checkdb);
 router.post('/makevideo',utm.imtovi);
 router.post('/uploadingimage',cts.imageuploading);
 router.get('/getcategory',gcat.getcat);

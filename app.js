@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use('/',require('./server/routes/homeroute'));
 app.use('/createvideo',require('./server/routes/homeroute'));
 app.use('/texttspeech',require('./server/routes/homeroute'));
-app.use('/b',require('./server/routes/homeroute'));
+app.use('/insertcategory',require('./server/routes/homeroute'));
 app.use('/makevideo',require('./server/routes/homeroute'));
 app.use('/uploadingimage',require('./server/routes/homeroute'));
 app.use('/getcategory',require('./server/routes/homeroute'));

@@ -46,7 +46,7 @@ var send=function(){
       .catch(function (error) {
         console.log(error);
       });
-
+      
 };
 
 //sending text and file name tts $()
@@ -142,6 +142,34 @@ $('#file_name').keyup(function(){
 
   }
   
+
+});
+
+//sending category into category table
+$('#newcat').click(function(){
+
+  const category=$('#cat');
+  $.ajax({
+    url         :'/insertcategory',
+    method      : 'POST',
+    contentType :'application/json',
+    data        :JSON.stringify({newcat:category.val()}),
+    success     :function(response){
+      //do something
+
+      var select=$('#video_cat');
+      var btn=$('#newcat');
+      var txt=$('#cat');
+      select.append('<option>'+response+'</option>');
+      btn.attr("disabled", true);
+      txt.val("");
+
+      
+      
+    }
+
+
+  });
 
 });
 

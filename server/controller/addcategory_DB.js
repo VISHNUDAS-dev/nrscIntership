@@ -16,16 +16,15 @@ exports.checkdb=async(req,res)=>{
     }); 
     await conn.connect(function(err) {
       if (err) throw err;
-      console.log('Database is connected successfully !');
+      //console.log('Database is connected successfully !');
     });
-    const categoryname=req.body.cat;
-    console.log("g"+categoryname);
+    const categoryname=req.body.newcat;
+    //console.log("g"+categoryname);
     var query = "INSERT INTO category(section)VALUES('"+categoryname+"')";
     conn.query(query, function(err, rows, fields){
         if(!err){
-            console.log(rows);
-            result = rows;
-            res.render('workspace');
+            //console.log(rows);
+            res.send(categoryname);
         }
         else{
             console.log("category already exists.");
