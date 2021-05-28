@@ -42,6 +42,8 @@ var send=function(){
       .then(function (response) {
         console.log(response);
         console.log("axios posting............");
+        
+        
       })
       .catch(function (error) {
         console.log(error);
@@ -54,14 +56,19 @@ $('#ttsbtn').click(function(){
 
   const file_name=$('#file_name');
   const input_data=$('#tarea');
+  const input_lan=$('#languages');
+
   $.ajax({
     url         :'/texttspeech',
     method      : 'POST',
     contentType :'application/json',
-    data        :JSON.stringify({filename:file_name.val(),inputdata:input_data.val()}),
+    data        :JSON.stringify({filename:file_name.val(),inputdata:input_data.val(),lan:input_lan.val()}),
+    beforeSend  : function() { $('#preloadertts').show(); },
     success     :function(response){
       //do something
-    }
+      
+    },
+    complete   : function() { $('#preloadertts').hide(); },
 
 
   });
@@ -69,7 +76,7 @@ $('#ttsbtn').click(function(){
 });
 
 //sending text and file name imagetovideo $()
-$('#makevideo').click(function(){
+$('#makevideo').on('click',function(){
 
   const file_name=$('#file_name');
   const vcat=$('#video_cat');
@@ -82,8 +89,7 @@ $('#makevideo').click(function(){
       //do something
       //response.download(output);
       
-    }
-
+    },
 
   });
 
@@ -111,7 +117,6 @@ $('#next').click(function(){
 });
 //sending filename to check the availability
 $('#file_name').keyup(function(){
-
   //var file_name = $(this).val().trim();
   const file_name=$('#file_name');
   if(file_name != ''){
@@ -141,6 +146,7 @@ $('#file_name').keyup(function(){
     });
 
   }
+ 
   
 
 });
@@ -164,6 +170,24 @@ $('#newcat').click(function(){
       btn.attr("disabled", true);
       txt.val("");
 
+      
+      
+    }
+
+
+  });
+
+});
+//sending data to merge video
+$('#mergevideo').click(function(){
+
+  const filesname=$('#file_name');
+  $.ajax({
+    url         :'/mergevideo',
+    method      : 'POST',
+    contentType :'application/json',
+    data        :JSON.stringify({filename:filesname.val()}),
+    success     :function(response){
       
       
     }
