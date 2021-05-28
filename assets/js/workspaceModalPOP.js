@@ -27,3 +27,20 @@ function stateHandle()
         button.disabled=false;
     }
 }
+
+let textinput=document.getElementById('tarea');
+let gbutton=document.getElementById('ttsbtn');
+gbutton.disabled=true;
+textinput.addEventListener("keyup",stateHandler);
+function stateHandler()
+{
+    if(document.getElementById('tarea').value===""){
+        gbutton.disabled=true;
+    }else
+    {
+        gbutton.disabled=false;
+    }
+}
+
+
+

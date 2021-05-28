@@ -5,18 +5,6 @@ const fs=require('fs');
 
 exports.imageuploading=(req,res)=>{
 
-
-
-  
-    
-    //const fname=Storage.Session.get('FNAME');
-    //const dydir='./uploads/images/'+cat+'/'+fname+'/';
-    //console.log(cat);
-    //if(!fs.existsSync(dydir)){
-      //fs.mkdirSync(dydir);
-    //}
-
-
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
           const fname=req.body.file_folder;
@@ -27,7 +15,7 @@ exports.imageuploading=(req,res)=>{
           if(!fs.existsSync(badir)){
             fs.mkdirSync(badir);}
             
-          const dydir=badir+'/'+fname+'/';
+          const dydir=badir+fname+'/';
           console.log(dydir);
           if(!fs.existsSync(dydir)){
             fs.mkdirSync(dydir);}
@@ -49,6 +37,7 @@ exports.imageuploading=(req,res)=>{
           console.log("unknownerror");
         }
         console.log("image uploaded successfully");
+        res.end();
         // Everything went fine.
       })
  

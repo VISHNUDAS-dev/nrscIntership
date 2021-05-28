@@ -9,6 +9,7 @@ const cts=require('../controller/clientToserverupld');
 const gcat=require('../controller/get_category');
 const fsin=require('../controller/insert_filename');
 const fncheck=require('../controller/validatefilename');
+const vmerge=require('../controller/mergevideo');
 
 
 
@@ -24,5 +25,6 @@ router.post('/uploadingimage',cts.imageuploading);
 router.get('/getcategory',gcat.getcat);
 router.post('/insertfilename',fsin.insertfilestore);
 router.post('/checkfilename',fncheck.checkavailability);
+router.post('/mergevideo',vmerge.merger);
 router.post('/download',utm.downloading);
 module.exports=router;

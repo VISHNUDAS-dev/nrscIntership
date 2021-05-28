@@ -36,37 +36,83 @@
             
         </div>
         <div class="actionsection">
-            <div class="image_wrapping">
-                <img src="../assets/img/logo.png" alt="applogo_here">
+            <div class="top">
+                <div class="image_wrapping">
+                    <img src="../assets/img/logo.png" alt="applogo_here">
+                </div>
+                <div class="sectiontitle">Welcome To Your Workspace</div>
             </div>
-            <div class="sectiontitle">Welcome To Your Workspace</div>
+            
             <!--this section contain gui for uploading images-->
             <div class="imgupload">
-                add icon here................
-                <h3>upload images from local system</h3>
-                <input type="file" name="myfile" id="myfile" multiple accept="image/jpg,png,jpeg">
-                <button  onclick="send()">Upload</button>
+                <p class="steph">Step 1:</p>
+                <i class="far fa-images"></i>
+                <h3>Upload Your Images</h3>
+                <input type="file" class="fileup"name="myfile" id="myfile" multiple accept="image/jpg,png,jpeg"><br>
+                <p class="info">Please select images before clicking upload button.</p>
+                <button id="upldbtn" onclick="send()">Upload</button>
+                <div class="loading" id="loader">
+                    <img src="../assets/img/loading.gif" alt="loading......">
+                </div>
             </div>
              <!--this section contain gui for text to speech-->
             <div class="tts">
-                add icon here.....................
-                <h3>Compose your background track</h3>
-                <textarea name="text" id="tarea" cols="30" rows="10"></textarea>
+                <p class="steph">Step 2:</p>
+                <i class="fas fa-music"></i>
+                <h3>Compose Your Background Track</h3>
+                <div class="language">
+                    <i class="fas fa-cog" id="icon"></i>
+                    <select id="languages">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ta">Tamil</option>
+                    </select>
+                </div>
+                <textarea name="text" id="tarea" cols="30" rows="10" placeholder="Remember! Be nice."></textarea><br>
                 <button  id="ttsbtn" >Compose</button>
+                <div id="preloadertts" >    
+                    <div class="ttsloading">
+                        <img src="../assets/img/loading.gif" alt="loading......">
+                    </div>
+                    <p>Please wait..Don't go to next step.</p>
+                </div>
+                
             </div>
+             <!--this section contain gui for addframe-->
             <div class="rendervideo">
-                icon Here...
-                <h4>Video Options</h4>
-                icon here..
-                <p>select loop time</p>
+                <p class="steph">Step 3:</p>
+                <i class="fas fa-film"></i>
+                <h3>Frame Options</h3>
+                <p class="addframeinfo">select loop time (sec)</p>
                 <input type="number" id="loop" name="time">
-                <button id="makevideo">Render Video</button><br>
+                <button id="makevideo">Add Frame</button><br>
             </div>
             <!--this button click creates the video-->
+            <div class="merge">
+                <p>Please render video after you completed adding your video frames</p>
+                <button id="mergevideo">Render</button><br>
+            </div>
+            
+
+           
+            
+        </div>
+
+        <!--render success section-->
+        <div class="success">
+            <p>Your Download is Ready!</p>
             <div class="download">
                 <input type="submit" name="button1" value="Download" form="Form1" />
             </div>
-            
+
+        </div>
+        <!--render error section-->
+        <div class="error">
+            <div class="goback">
+                <p>Sorry. Something Went Wrong</p>
+                <button>Try again</button>
+            </div>
+
         </div>
         
 
@@ -91,6 +137,8 @@
             
         </div>
      </div>
+     
+
 
 
 

@@ -3,31 +3,35 @@ var videoshow=require('videoshow');
 const fs=require('fs');
 const bodyParser=require('body-parser');
 const path= require('path');
+var appDir = path.dirname(require.main.filename);
 
 exports.imtovi=(req,res)=>{
+    console.log("inside function-----");
 
-    var appDir = path.dirname(require.main.filename);
+    
 
     //getting text data from ajax request createvideo
-    const parent_folder=req.body.type;
-    const child_folder=req.body.filename;
+    var parent_folder=req.body.type;
+    var child_folder=req.body.filename;
     console.log(parent_folder);
     console.log(child_folder);
     //data aquired------------
 
 
     //setting file names for audio and video
-    const videoname=child_folder+'.mp4';
-    const bgm=child_folder+'.mp3';
+    var videoname=Date.now()+'.mp4';
+    var bgm=child_folder+'.mp3';
     //values set-----------------
 
 
-    const audiofilename=appDir+'/uploads/audio/'+bgm;
+    var audiofilename=appDir+'/uploads/audio/'+bgm;
     
-    let img=[];
-    let time=4;
-    let directory_name='./uploads/images/'+parent_folder+'/'+child_folder+'/';
-    let ddrk='./uploads/videos/';
+    var img=[];
+    var time=4;
+    var directory_name='./uploads/images/'+parent_folder+'/'+child_folder+'/';
+    var ddrk='./tmp/'+child_folder+'/';
+    if(!fs.existsSync(ddrk)){
+        fs.mkdirSync(ddrk);}
     let filenames = fs.readdirSync(directory_name);
     console.log("\nFilenames in directory:");
     filenames.forEach((file) => {
@@ -70,13 +74,19 @@ exports.imtovi=(req,res)=>{
     })
     .on('end',function(output){
         console.log("covertion completed"+output);
-        //let savedir=ddrk+"nrsc.mp4";
-        //console.log(savedir);
+        res.send("success");
         img=[];
-        //res.download(output);
-        
+        var directory = directory_name;
+        fs.readdir(directory, (err, files) => {
+            if (err) throw err;
+            for (var file of files) {
+                fs.unlink(path.join(directory, file), err => {
+                    if (err) throw err;
+                    });
+            }
+        });
     })
-    
+
 }
 
 exports.downloading=(req,res)=>{
@@ -84,6 +94,5 @@ exports.downloading=(req,res)=>{
     const name=req.body.filename;
     //console.log(child_folder);
     res.download('./uploads/videos/'+name+'.mp4');
-
-
 }
+
