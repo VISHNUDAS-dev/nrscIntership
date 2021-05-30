@@ -11,13 +11,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">       
     </head>
     <body>
-        <div class="appadv">
+        <div class="appadv" id="registration_section">
             <div class="image_wrapper">
                 <img src="../assets/img/logo.png" alt="applogo_here">
             </div>
             <div class="ah">iVideo Workbench</div>
             <i id="ac" class="fas fa-plus-circle"></i>
-            <div class="regsection">
+            <div class="regsection" >
                 <!--this section check the authenticity of the file name and selection of category-->
                     <form id="Form1" action="/download" method="post"></form>
                     <div class="description">
@@ -86,10 +86,16 @@
                 <p class="addframeinfo">select loop time (sec)</p>
                 <input type="number" id="loop" name="time">
                 <button id="makevideo">Add Frame</button><br>
+                <div id="preloaderaddframe" >    
+                    <div class="addframeloading">
+                        <img src="../assets/img/loading.gif" alt="loading......">
+                    </div>
+                    <p>Please wait..Don't go to next step.</p>
+                </div>
             </div>
             <!--this button click creates the video-->
             <div class="merge">
-                <p>Please render video after you completed adding your video frames</p>
+                <p>Please render video  only after you completed adding all your video frames</p>
                 <button id="mergevideo">Render</button><br>
             </div>
             
@@ -100,18 +106,24 @@
 
         <!--render success section-->
         <div class="success">
-            <p>Your Download is Ready!</p>
+            <div class="successimage">
+                <img src="../assets/img/success.svg" alt="success image">
+            </div>
+            <p>Success! Download is ready</p>
             <div class="download">
-                <input type="submit" name="button1" value="Download" form="Form1" />
+                <input type="submit" name="button1"  id="downloadbtn" value="Download" form="Form1" />
             </div>
 
         </div>
         <!--render error section-->
         <div class="error">
-            <div class="goback">
-                <p>Sorry. Something Went Wrong</p>
-                <button>Try again</button>
+            <div class="errorimage">
+                <img src="../assets/img/error.svg" alt="error image">
             </div>
+            <p>Oops! Something Went Wrong</p>
+            <form method="GET" action="/createvideo">
+                <input type="submit" id="errorbtn" value="Try again">
+            </form>
 
         </div>
         
