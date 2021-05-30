@@ -30,7 +30,7 @@ function stateHandle()
 
 let textinput=document.getElementById('tarea');
 let gbutton=document.getElementById('ttsbtn');
-gbutton.disabled=true;
+gbutton.disabled=false;
 textinput.addEventListener("keyup",stateHandler);
 function stateHandler()
 {
@@ -39,6 +39,20 @@ function stateHandler()
     }else
     {
         gbutton.disabled=false;
+    }
+}
+
+let fpsinput=document.getElementById('loop');
+let fpsbutton=document.getElementById('makevideo');
+fpsbutton.disabled=true;
+fpsinput.addEventListener("keyup",stateHandler);
+function stateHandler()
+{
+    if(document.getElementById('loop').value==="" || document.getElementById('loop').value<1 ){
+        fpsbutton.disabled=true;
+    }else
+    {
+        fpsbutton.disabled=false;
     }
 }
 

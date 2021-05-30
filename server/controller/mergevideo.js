@@ -37,7 +37,7 @@ exports.merger=(req,res)=>{
         }
         else{
             console.log("videos are successfully merged");
-        
+            res.end();
         }
         
     })

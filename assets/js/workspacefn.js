@@ -80,16 +80,19 @@ $('#makevideo').on('click',function(){
 
   const file_name=$('#file_name');
   const vcat=$('#video_cat');
+  const time=$('#loop');
   $.ajax({
     url         :'/makevideo',
     method      : 'POST',
     contentType :'application/json',
-    data        :JSON.stringify({filename:file_name.val(),type:vcat.val()}),
+    data        :JSON.stringify({filename:file_name.val(),type:vcat.val(),fps:time.val()}),
+    beforeSend  : function() { $('#preloaderaddframe').show(); },
     success     :function(response){
       //do something
       //response.download(output);
       
     },
+    complete   : function() { $('#preloaderaddframe').hide(); },
 
   });
 
@@ -107,8 +110,8 @@ $('#next').click(function(){
     data        :JSON.stringify({filename:file_name.val()}),
     success     :function(response){
       //do something
-      
-      
+      $('#registration_section').hide(600);
+      $('.actionsection').show(600);  
     }
 
 
@@ -188,9 +191,13 @@ $('#mergevideo').click(function(){
     contentType :'application/json',
     data        :JSON.stringify({filename:filesname.val()}),
     success     :function(response){
-      
-      
-    }
+      $('.actionsection').hide(600);
+      $('.success').show(600);  
+    },
+    error       :function(response){
+      $('.actionsection').hide(600);
+      $('.error').show(600);  
+    },
 
 
   });

@@ -24,6 +24,7 @@ exports.insertfilestore=async(req,res)=>{
         if(!err){
             console.log(rows);
             result = rows;
+            res.end();
         }
         else{
             console.log("category already exists.");

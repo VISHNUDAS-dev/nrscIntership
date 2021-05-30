@@ -27,7 +27,7 @@ exports.imtovi=(req,res)=>{
     var audiofilename=appDir+'/uploads/audio/'+bgm;
     
     var img=[];
-    var time=4;
+    var time=req.body.fps;
     var directory_name='./uploads/images/'+parent_folder+'/'+child_folder+'/';
     var ddrk='./tmp/'+child_folder+'/';
     if(!fs.existsSync(ddrk)){

@@ -24,8 +24,9 @@ html{
     border-radius: .8rem;
     margin: auto;
     text-align: center;
-    margin-top: 20rem;
+    margin-top: 15rem;
     position: relative;
+    
 }
 .image_wrapper{
     width: 5rem;
@@ -161,6 +162,8 @@ html{
     margin-top:3rem;
     margin-bottom:3rem;
     text-align: center;
+    overflow: hidden;
+    display: none;
 
 }
 .image_wrapping{
@@ -370,7 +373,7 @@ html{
 
 .rendervideo{
     
-    background-color:rgba(58, 58, 58, 0.055);
+    background-color:rgba(255, 255, 255);
     
 }
 .addframeinfo{
@@ -434,37 +437,194 @@ html{
     border: 2px solid rgba(73, 72, 75, 0.4);
     cursor: auto;
 }
+#preloaderaddframe {
+    display: none;
+}
+#preloaderaddframe p{
+    padding-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+.merge{
+    margin-top: 4rem;
+    background-color: rgb(109, 86, 214);
+}
+.merge p{
+    padding-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+#mergevideo{
+    
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    color:rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    border-radius: 2rem;
+    transition: .3s;
+    outline-style: none;
+    cursor: pointer;
+}
+#mergevideo:enabled{
+    
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    color:rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    border-radius: 2rem;
+    transition: .3s;
+    outline-style: none;
+    cursor: pointer;
+}
+#mergevideo:enabled:hover{
+    background-color:white;
+    color:rgb(109, 86, 214);
+}
+#makevideo:disabled{
+    background-color:rgba(255, 255, 255, 0);
+    color:rgba(95, 93, 97, 0.4);
+    border: 2px solid rgba(73, 72, 75, 0.4);
+    cursor: auto;
+}
+
+
 
 
 .success{
-    width: 80%;
-    height: 5rem;
+    width: 50%;
+    height: auto;
     margin: auto;
     background-color:white;
     margin-bottom: 5rem;
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+    border-radius: .8rem;
+    text-align: center;
+    position: relative;
+    margin-top: 5rem;
+    display: none;
+}
+.successimage{
+    width: 60%;
+    height: 45rem;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+.successimage img{
+    width: 100%;
+    height: 100%;
+    
+}
+.success p{
+    margin-top: 3rem;
+    font-family: 'Quattrocento', serif;
+    font-size: 1.3rem;
+    letter-spacing: .01em;
+    color:rgba(0, 0, 0, 0.438);
+    font-weight: bold;
+    text-shadow: 0 .3rem .5rem 0 rgba(46, 45, 45, 0.178);
+}
+#downloadbtn{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 255, 255);
+    color:rgb(109, 86, 214);
+    border: 2px solid rgb(109, 86, 214);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    border-radius: 2.5rem;
+    transition: .3s;
+    outline-style: none;
+    cursor: pointer;
+}
+#downloadbtn:hover{
+    background-color:rgb(109, 86, 214);
+    color:white;    
 }
 .download{
     text-align: center;
-    padding-bottom:3rem;
+    padding-bottom:2rem;
 }
+
 .error{
-    width: 80%;
-    height: 5rem;
+    width: 50%;
+    height: auto;
     margin: auto;
     background-color:white;
     margin-bottom: 5rem;
-}
-.goback{
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+    border-radius: .8rem;
     text-align: center;
-    padding-bottom:3rem;
+    position: relative;
+    margin-top: 5rem;
+    display: none;
 }
-
-
-
-
-
-
-
+.errorimage{
+    width: 60%;
+    height: 45rem;
+    margin-left: 50%;
+    transform: translate(-50%);
+        
+}
+.errorimage img{
+    width: 100%;
+    height: 100%;
+    
+}
+.error p{
+    margin-top: 3rem;
+    font-family: 'Quattrocento', serif;
+    font-size: 1.3rem;
+    letter-spacing: .01em;
+    color:rgba(0, 0, 0, 0.438);
+    font-weight: bold;
+    text-shadow: 0 .3rem .5rem 0 rgba(46, 45, 45, 0.178);
+}
+#errorbtn{
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    background-color: rgb(255, 255, 255);
+    color:rgb(109, 86, 214);
+    border: 2px solid rgb(109, 86, 214);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    border-radius: 2.5rem;
+    transition: .3s;
+    outline-style: none;
+    cursor: pointer;
+}
+#errorbtn:hover{
+    background-color:rgb(109, 86, 214);
+    color:white;    
+}
 
 
 
