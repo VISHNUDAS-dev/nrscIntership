@@ -40,14 +40,15 @@ var send=function(){
 
     axios.post('/uploadingimage',formdata,contenttype)
       .then(function (response) {
+        
         console.log(response);
-        console.log("axios posting............");
         
         
       })
       .catch(function (error) {
         console.log(error);
       });
+      document.getElementsByClassName("tts").hide();
       
 };
 
@@ -90,6 +91,9 @@ $('#makevideo').on('click',function(){
     success     :function(response){
       //do something
       //response.download(output);
+      time.val('');
+      $('#tarea').val(''); 
+      $('#myfile').val(''); 
       
     },
     complete   : function() { $('#preloaderaddframe').hide(); },

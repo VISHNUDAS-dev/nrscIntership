@@ -30,9 +30,9 @@ function stateHandle()
 
 let textinput=document.getElementById('tarea');
 let gbutton=document.getElementById('ttsbtn');
-gbutton.disabled=false;
-textinput.addEventListener("keyup",stateHandler);
-function stateHandler()
+gbutton.disabled=true;
+textinput.addEventListener("keyup",stateHandling);
+function stateHandling()
 {
     if(document.getElementById('tarea').value===""){
         gbutton.disabled=true;
