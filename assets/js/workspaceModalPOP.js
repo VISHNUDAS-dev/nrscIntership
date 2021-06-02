@@ -1,7 +1,7 @@
-window.addEventListener('scroll',function(){
-    let nav=document.querySelector('nav');
-    nav.classList.toggle('scrolling-active', window.scrollY>0);
-});
+//window.addEventListener('scroll',function(){
+  //  let nav=document.querySelector('nav');
+    //nav.classList.toggle('scrolling-active', window.scrollY>0);
+//});
 document.getElementById('ac').addEventListener('click',function(){
     document.querySelector('.modalbg').style.display="flex";
     document.querySelector('body').style.overflow="hidden";

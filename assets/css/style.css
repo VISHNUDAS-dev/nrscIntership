@@ -8,10 +8,12 @@
 }
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
 }
 html{
     font-size: 62.5%;
+}
+body {
+    overflow-x: hidden;
 }
 .banner{
     width:100%;
@@ -53,6 +55,7 @@ html{
     
     
 }
+
 .applogo{
     width: 7rem;
     height: auto;
@@ -89,6 +92,35 @@ html{
         opacity: 1;
     }
 }
+#quick_download{
+    position:absolute;
+    top: 2rem;
+    right: 4rem;
+    background-color:rgb(255, 255, 255);
+    color:rgb(109, 86, 214);
+    border: 2px solid rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    border-radius: 2.5rem;
+    transition: .2s;
+    outline-style: none;
+    cursor: pointer;
+    
+    
+}
+#quick_download:hover{
+    transform: scale(1.05);
+    
+    
+}
+
+
+
 .subheading{
     font-family: 'Antic', sans-serif;
     color: rgba(0, 0, 0, 0.404);
@@ -245,6 +277,135 @@ html{
     font-weight: bold;
     color: rgba(0, 0, 0, 0.548);
 }
+
+
+.QD_modal_bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    
+}
+.qd_modalpopup{
+    width: 35%;
+    height: auto;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    border-radius:6px;
+    position: relative;
+    text-align: center;
+}
+.qd_close{
+    position: absolute;
+    right: 1.2rem;
+    top: .5rem;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(109, 86, 214);
+    transform:rotate(45deg);
+    cursor: pointer;
+}
+.qdicon_wrapper{
+    width: 5rem;
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%);
+    padding-top: 3.5rem;
+}
+#app{
+    font-family: 'Quattrocento', serif;
+    font-size: 1.6rem;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    margin-top: 8.2rem;
+}
+.qd_modalpopup i{
+    margin-top: 4rem;
+    font-size: 10rem;
+    color:rgb(109, 86, 214) ;
+}
+.qdicon_wrapper img{
+    width: 100%;
+    object-fit: cover;
+}
+.deatails{
+    padding-top: 1.3rem;
+}
+.deatails p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color:rgb(0, 0, 0);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0 .3rem .5rem 0 rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    width: 70%;
+    padding-bottom: .5rem;
+}
+#video_name{
+    margin-top: 1.5rem;
+    width: 19rem;
+    border: 2px solid rgb(109, 86, 214);
+    border-radius: 2.5rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    background-color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.726);
+    transition: .3s;
+}
+
+#qkdwd{
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    background-color: rgb(109, 86, 214);
+    color:rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 70%;
+    padding: 1rem 3rem 1rem 3rem;
+    border-radius: 1rem;
+    transition: .3s;
+    outline-style: none;
+    cursor: pointer;
+}
+
+#qkdwd:disabled{
+    background-color: rgb(250, 202, 202);
+    color:rgba(73, 72, 75, 0.4);
+    border: 2px solid rgba(73, 72, 75, 0.4);
+    cursor: auto;
+}
+#qkdwd:enabled{
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    background-color: rgb(109, 86, 214);
+    color:rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 70%;
+    padding: 1rem 3rem 1rem 3rem;
+    border-radius: 1rem;
+    transition: .3s;
+    outline-style: none;
+    cursor: pointer;
+}
+
 .footer{
     background-color:rgb(109, 86, 214);
     height: 4rem;

@@ -4,6 +4,7 @@
      <!--adding style sheets and fonts-->
      <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
      <link rel="stylesheet" href="../assets/css/all.css" type="text/css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Antic&display=swap" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap" rel="stylesheet">
@@ -26,6 +27,7 @@
                 <div class="apptagline">Easy & Faster</div>
             </div>
         </div>
+        <button id="quick_download">Quick Download</button>
     </div>
 
 
@@ -96,20 +98,20 @@
             </div>
             <div class="step">
                 <div class="step_heading">
-                    <i class="fas fa-video"></i>
-                    <h3>Create Video</h3>
+                    <i class="fas fa-film"></i>
+                    <h3>Add Frame</h3>
                </div>
                <p>
-                   Click on the create button to create your video. It will take some time depending upon the file size. Once the creation is completed you can see a download button.
+                   Click on the Add Frame button to create new frame. You have to give a fps value also. It will take some time depending upon the file size.
                </p>
             </div>
             <div class="step">
                 <div class="step_heading">
-                    <i class="fas fa-save"></i>
-                    <h3>Download</h3>
+                    <i class="fas fa-wave-square"></i>
+                    <h3>Render</h3>
                </div>
                <p>
-                   Press the download button to save the created file into your local machine.
+                   Press the Render button to make video from frames. After completion you can download the video.
                </p>
             </div>
             <div class="image_wrapper">
@@ -120,7 +122,26 @@
      </section>
 
 
+    <!--adding modal popup-->
     
+    <div class="QD_modal_bg">
+        
+        <div class="qd_modalpopup">
+            
+            <div class="qd_close">+</div>
+            <div class="qdicon_wrapper">
+                <img src="../assets/img/logo.png" alt=appicon>
+            </div><br>
+            <p id="app">iVideo</p>
+            <i class="fas fa-download"></i>
+            <form class="deatails" action="/quickdownload" method="POST">
+                <p>Download video created by you or your colleague using a valid file name</p>
+                <input type="text" id="video_name" placeholder="Video file name" autocomplete="off"><br>
+                <button id="qkdwd" type="submit">Download File</button>
+            </form>
+            
+        </div>
+     </div>
     
     
     
@@ -132,7 +153,7 @@
         <div class="footertext">©NRSC Hyderabad, ISRO All rights reserved</div>
     </div>
 
-   
+    <script src="../assets/js/homemodel.js"></script>
 
 </body>
 
