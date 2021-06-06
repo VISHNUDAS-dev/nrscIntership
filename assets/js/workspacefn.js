@@ -123,7 +123,7 @@ $('#next').click(function(){
 
 });
 //sending filename to check the availability
-$('#file_name').keyup(function(){
+$('#file_name').keyup(function(event){
   //var file_name = $(this).val().trim();
   const file_name=$('#file_name');
   if(file_name != ''){

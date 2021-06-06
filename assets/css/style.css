@@ -371,7 +371,7 @@ body {
     margin-bottom: 5rem;
     background-color: rgb(109, 86, 214);
     color:rgb(255, 255, 255);
-    border: 2px solid rgb(255, 255, 255);
+    border: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
@@ -384,9 +384,9 @@ body {
 }
 
 #qkdwd:disabled{
-    background-color: rgb(250, 202, 202);
-    color:rgba(73, 72, 75, 0.4);
-    border: 2px solid rgba(73, 72, 75, 0.4);
+    background-color: rgba(82, 82, 85, 0.6);
+    color:rgba(255, 255, 255, 0.5);
+    border: none;
     cursor: auto;
 }
 #qkdwd:enabled{
@@ -394,7 +394,7 @@ body {
     margin-bottom: 5rem;
     background-color: rgb(109, 86, 214);
     color:rgb(255, 255, 255);
-    border: 2px solid rgb(255, 255, 255);
+    border: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;

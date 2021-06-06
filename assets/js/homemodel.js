@@ -23,10 +23,10 @@ $('#video_name').keyup(function(){
         data        :JSON.stringify({video_name:video_file_name.val()}),
         success     :function(response){
           if(response==0){
-            $("#qkdwd").attr("disabled", true);
+            $("#qkdwd").attr("disabled", false);
           }
           else if (response==1){
-            $("#qkdwd").attr("disabled", false);
+            $("#qkdwd").attr("disabled", true);
           }
           else{
             

@@ -34,6 +34,9 @@ app.use('/insertfilename',require('./server/routes/homeroute'));
 app.use('/checkfilename',require('./server/routes/homeroute'));
 app.use('/mergevideo',require('./server/routes/homeroute'));
 app.use('/download',require('./server/routes/homeroute'));
+app.use('/checkvideoavailability',require('./server/routes/homeroute'));
+app.use('/quickdownload',require('./server/routes/homeroute'));
+
 
 
     
