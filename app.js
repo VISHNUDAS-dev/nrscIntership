@@ -10,7 +10,7 @@ const multer=require('multer');
 
 const app=express();
 
-
+const PORT = process.env.PORT || 3000
 
 
 //set view engine
@@ -40,7 +40,8 @@ app.use('/quickdownload',require('./server/routes/homeroute'));
 
 
     
+app.listen(PORT,() => {
+    console.log('server is running on http://localhost:3000')
+});
 
-app.listen(3000,()=>{
-    console.log('server is running on http://localhost:3000')});
 
